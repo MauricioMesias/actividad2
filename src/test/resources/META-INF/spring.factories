@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory = com.aiep.actividad2.\
+    config.SqlTestContainersSpringContextCustomizerFactory
