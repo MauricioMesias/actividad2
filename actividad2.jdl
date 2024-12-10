@@ -1,0 +1,29 @@
+entity Empleado {
+  nombre String required,
+  apellido String required,
+  telefono String required,
+  correo String required
+}
+
+entity Departamento {
+  nombre String required,
+  ubicacion String required,
+  monto BigDecimal required
+}
+
+entity Jefe {
+  nombre String required,
+  apellido String required,
+  telefono String required
+}
+
+// Relaciones
+relationship ManyToOne {
+  Empleado{departamento} to Departamento,
+  Departamento{jefe} to Jefe
+}
+
+// DTOs, servicios y paginación
+dto Empleado, Departamento, Jefe with mapstruct
+service all with serviceClass
+paginate Empleado, Departamento with pagination
